@@ -2,10 +2,10 @@ package HomWork6;
 
 public class Cat extends Animal {
     public Cat(String type, String name, int run, int swim) {
-        this.Type = type;
-        this.Name = name;
-        this.run = run;
-        this.swim = swim;
+        super.type = type;
+        super.name = name;
+        super.run = run;
+        super.swim = swim;
         amount++;
     }
 
@@ -13,5 +13,10 @@ public class Cat extends Animal {
 
     public static int getAmount(){
         return amount;
+    }
+
+    @Override
+    public void amount() {
+
     }
 }
