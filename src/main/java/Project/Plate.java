@@ -20,6 +20,10 @@ public class Plate {
     }
 
     public void info() {
-        System.out.println("Еды в миске: " + food);
+        if (food < 0){
+            System.out.println("Столько еды нельзя добавить )))");
+        }else {
+            System.out.println("Еды в миске: " + food);
+        }
     }
 }

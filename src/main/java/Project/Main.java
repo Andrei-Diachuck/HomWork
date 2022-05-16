@@ -35,7 +35,6 @@ public class Main {
 
             }
         }
-        System.out.println("Все коты сыты");
-
+        plate.info();
     }
 }
