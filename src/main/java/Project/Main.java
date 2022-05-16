@@ -12,25 +12,27 @@ public class Main {
         cats[1] = new Cat("Мурзик", 5, false);
         cats[2] = new Cat("Маркиз", 10, false);
 
-        Plate plate = new Plate(15);
+        Plate plate = new Plate(10);
         plate.info();
         for (int i = 0; i < cats.length; i++) {
-            if (cats[i].satiety == false && cats[i].appetite <= plate.food) {
+            if (cats[i].satiety == false && cats[i].getAppetite() <= plate.getFood()) {
                 cats[i].eat(plate);
                 cats[i].satiety = true;
-                System.out.println("Кот " + cats[i].name + " съел " + cats[i].appetite);
+                System.out.println("Кот " + cats[i].getName() + " съел " + cats[i].getAppetite());
             } else {
-                System.out.println("Коту " + cats[i].name + " не хватило еды");
+                System.out.println("Коту " + cats[i].getName() + " не хватило еды");
             }
         }
 
         for (int i = 0; i < cats.length; i++) {
             if (cats[i].satiety == true) {
-                System.out.println(cats[i].name + " сытый");
+                System.out.println(cats[i].getName() + " сытый");
             } else {
+                plate.info();
                 System.out.println("Сколько еды нужно еще добавить ?");
                 adding = sc.nextInt();
                 plate.increaseFood(adding);
+
             }
         }
         System.out.println("Все коты сыты");

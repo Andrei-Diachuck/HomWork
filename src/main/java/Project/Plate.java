@@ -1,17 +1,21 @@
 package Project;
 
 public class Plate {
-    public int food;
+    private int food;
 
     public Plate(int food) {
         this.food = food;
     }
 
-    public void decreaseFood(int n) {
+    public int getFood() {
+        return food;
+    }
+
+    protected void decreaseFood(int n) {
         food -= n;
     }
 
-    public void increaseFood(int b) {
+    protected void increaseFood(int b) {
         food += b;
     }
 
