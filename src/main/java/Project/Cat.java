@@ -3,7 +3,7 @@ package Project;
 public class Cat {
     private String name;
     private int appetite;
-    boolean satiety;
+    private boolean satiety;
 
     public Cat(String name, int appetite, boolean satiety) {
         this.name = name;
@@ -21,6 +21,5 @@ public class Cat {
 
     public void eat(Plate p) {
         p.decreaseFood(appetite);
-
     }
 }

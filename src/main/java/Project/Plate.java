@@ -1,5 +1,7 @@
 package Project;
 
+import java.util.Scanner;
+
 public class Plate {
     private int food;
 
@@ -20,10 +22,18 @@ public class Plate {
     }
 
     public void info() {
-        if (food < 0){
+        if (food < 0) {
             System.out.println("Столько еды нельзя добавить )))");
-        }else {
+        } else {
             System.out.println("Еды в миске: " + food);
         }
     }
+
+    public void scanner() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Сколько еды нужно еще добавить ?");
+        String str = sc.nextLine();
+    }
+
+
 }

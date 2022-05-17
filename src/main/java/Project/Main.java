@@ -1,40 +1,30 @@
 package Project;
 
 import java.util.Scanner;
+import java.util.SortedMap;
 
 public class Main {
-    public static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int adding;
         Cat[] cats = new Cat[3];
         cats[0] = new Cat("Барсик", 5, false);
         cats[1] = new Cat("Мурзик", 5, false);
         cats[2] = new Cat("Маркиз", 10, false);
 
-        Plate plate = new Plate(10);
+        Plate plate = new Plate(5);
         plate.info();
-        for (int i = 0; i < cats.length; i++) {
-            if (cats[i].satiety == false && cats[i].getAppetite() <= plate.getFood()) {
-                cats[i].eat(plate);
-                cats[i].satiety = true;
-                System.out.println("Кот " + cats[i].getName() + " съел " + cats[i].getAppetite());
-            } else {
-                System.out.println("Коту " + cats[i].getName() + " не хватило еды");
-            }
-        }
 
-        for (int i = 0; i < cats.length; i++) {
-            if (cats[i].satiety == true) {
-                System.out.println(cats[i].getName() + " сытый");
-            } else {
+        for (Cat cat : cats) {
+            if (cat.getAppetite() <= plate.getFood()) {
+                cat.eat(plate);
+                System.out.println(cat.getName() + " сытый");
                 plate.info();
-                System.out.println("Сколько еды нужно еще добавить ?");
-                adding = sc.nextInt();
-                plate.increaseFood(adding);
-
+            } else if (cat.getAppetite() > plate.getFood()) {
+                System.out.println(cat.getName() + " не поел");
+                System.out.println(cat.getName() + " нужно " + cat.getAppetite() + " еды ");
+                plate.scanner();
             }
         }
-        plate.info();
+        System.out.println("Все коты сыты");
     }
 }
