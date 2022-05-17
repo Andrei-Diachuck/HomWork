@@ -19,6 +19,10 @@ public class Cat {
         return appetite;
     }
 
+    public boolean isSatiety() {
+        return satiety;
+    }
+
     public void eat(Plate p) {
         p.decreaseFood(appetite);
     }

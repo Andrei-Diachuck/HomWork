@@ -23,7 +23,7 @@ public class Plate {
 
     public void info() {
         if (food < 0) {
-            System.out.println("Столько еды нельзя добавить )))");
+            throw new IllegalArgumentException("Столько еды нельзя добавить )))");
         } else {
             System.out.println("Еды в миске: " + food);
         }
